@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Location Tracker</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <h1>Bus Location Tracker</h1>
+    </header>
+
+    <!-- Search and Map Container -->
+    <section id="search-section">
+        <input type="text" id="busSearch" placeholder="Enter bus number">
+        <button id="searchButton">Search</button>
+    </section>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Leaflet.js and Script -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="Script.js"></script>
+    <script src="Script1.js"></script>
+    <script src="Script2.js"></script>
+    <script src="Script3.js"></script>
+
+    <section id="bus-details" class="bus-details-section">
+        <h2>Bus Details</h2>
+        <div id="bus-container">
+            <h4><b>Bus 1:</b><br></h4>
+            <div class="box">
+                <h2>Bus Stops Details</h2>
+                <table>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Stops</th>
+                        <th>Timing</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>ODF</td>
+                        <td>6:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Shankarpally</td>
+                        <td>6:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>BDL</td>
+                        <td>6:55 AM</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Bhanuru</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Patancheravu</td>
+                        <td>7:15 AM</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>R.C Puram</td>
+                        <td>7:20 AM</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Bheeramguda</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Ashok Nagar</td>
+                        <td>7:35 AM</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Jyothi Nagar</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Lingampally</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Lingampally</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Gulmohar Park</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>HCU</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Heritage</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Maseed Banda</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Himagiri</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Gachibowli</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>O.R.R</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>K.L.H Campus</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                </table>
+            </div>
+            <h4><b>Bus 3:</b><br></h4>
+            <div class="box">
+                <h2>Bus Stops Details</h2>
+                <table>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Stops</th>
+                        <th>Timing</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Chandanagar</td>
+                        <td>6:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Gangaram</td>
+                        <td>6:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Deepthi Sri Nagar</td>
+                        <td>6:55 AM</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Madina Guda</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Miyapur Allwyn 'X' Road</td>
+                        <td>7:15 AM</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Hafeezpet</td>
+                        <td>7:20 AM</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Kondapur</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Kothaguda</td>
+                        <td>7:35 AM</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Botanical Garden</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Gachibowli ORR</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>K.L.H Campus</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                </table>
+            </div>
+            <h4><b>Bus 2:</b><br></h4>
+            <div class="box">
+                <h2>Bus Stops Details</h2>
+                <table>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Stops</th>
+                        <th>Timing</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>E.C.I.L</td>
+                        <td>6:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Naredmet</td>
+                        <td>6:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Sikanderabad</td>
+                        <td>6:55 AM</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Begumpet</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Banjara Hills</td>
+                        <td>7:15 AM</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Masab tank</td>
+                        <td>7:20 AM</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Mehdipatnam</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Langer House</td>
+                        <td>7:35 AM</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Bandhlaguda</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Kali Mandir</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                </table>
+            </div>
+            <h4><b>Bus 4:</b><br></h4>
+            <div class="box">
+                <h2>Bus Stops Details</h2>
+                <table>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Stops</th>
+                        <th>Timing</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Bachupally</td>
+                        <td>6:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Pragathi Nagar</td>
+                        <td>6:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Hydernagar</td>
+                        <td>6:55 AM</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Kalvari Temple</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Metro Station Kalveri Temple</td>
+                        <td>7:15 AM</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Miyapur</td>
+                        <td>7:20 AM</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>D-Mart</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>H.D.F.C</td>
+                        <td>7:35 AM</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Naren Gardens</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Miyapur Allwyn 'X' Road</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Hafezpet</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Kondapur</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Kothaguda Signal</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Botanical Garden</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Gachibowli ORR</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>K.L.H Campus</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                </table>
+            </div>
+            <h4><b>Bus 5:</b><br></h4>
+            <div class="box">
+                <h2>Bus Stops Details</h2>
+                <table>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Stops</th>
+                        <th>Timing</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Gachibowli</td>
+                        <td>6:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Nizampet</td>
+                        <td>6:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>J.N.T.U</td>
+                        <td>6:55 AM</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Forum Mall</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Hi-Tech City</td>
+                        <td>7:15 AM</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Bio-diversity</td>
+                        <td>7:20 AM</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Old Comissioner Office</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Gachibowli ORR</td>
+                        <td>7:35 AM</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>K.L.H Campus</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                </table>
+            </div>
+            <h4><b>Bus 6:</b><br></h4>
+            <div class="box">
+                <h2>Bus Stops Details</h2>
+                <table>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Stops</th>
+                        <th>Timing</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Suraram</td>
+                        <td>6:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Substation</td>
+                        <td>6:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Shapurnagar</td>
+                        <td>6:55 AM</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Srinivasa Nagar Colony</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Usha Mullapudi</td>
+                        <td>7:15 AM</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Ramki</td>
+                        <td>7:20 AM</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Dwarka Nagar</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Yellama Banda</td>
+                        <td>7:35 AM</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Tulasivanam</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>South India Shopping Mall</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>J.N.T.U</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Forum Mall</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Hi-Tech City</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Bio-Diversity</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Gachibowli ORR</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>K.l.H Campus</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                </table>
+            </div>
+            <h4><b>Bus 7:</b><br></h4>
+            <div class="box">
+                <h2>Bus Stops Details</h2>
+                <table>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Stops</th>
+                        <th>Timing</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>QUTBULLAPUR</td>
+                        <td>6:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>CHINTAL</td>
+                        <td>6:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>I.D.P.L</td>
+                        <td>6:55 AM</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>RANGAREDDY NAGAR</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>JAGADGIRIGUTTA</td>
+                        <td>7:15 AM</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>ALLWYN COLONY</td>
+                        <td>7:20 AM</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>VIVEKANANDA NAGAR GATE 1</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>FORUM MALL</td>
+                        <td>7:35 AM</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>J.N.T.U</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>FORUM MALL</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>HITECH CITY MMTS</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>CYBER TOWERS</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>GOOGLE OFFICE</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>KOTHAGUDA X ROAD</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>GACHIBOWLI ORR</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>K.L.H CAMPUS</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                </table>
+            </div>
+            <h4><b>Bus 8:</b><br></h4>
+            <div class="box">
+                <h2>Bus Stops Details</h2>
+                <table>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Stops</th>
+                        <th>Timing</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Alwal</td>
+                        <td>6:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Kompally</td>
+                        <td>6:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Suchitra</td>
+                        <td>6:55 AM</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Dairy Form</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>M.M.R Garden</td>
+                        <td>7:15 AM</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Old Bwoinpally</td>
+                        <td>7:20 AM</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>B.B.R Hospital</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Balkampet</td>
+                        <td>7:35 AM</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>SR NAGAR P.S</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>SR Nagar Metro Station</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Maitryvanam</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>K.L.M Shopping Mall</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>K.L.H Campus</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                </table>
+            </div>
+            <h4><b>Bus 9:</b><br></h4>
+            <div class="box">
+                <h2>Bus Stops Details</h2>
+                <table>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Stops</th>
+                        <th>Timing</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Mothinagar</td>
+                        <td>6:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>E.S.I</td>
+                        <td>6:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Erragadda</td>
+                        <td>6:55 AM</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Bharath Nagar</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Moosapet</td>
+                        <td>7:15 AM</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Kukatpally</td>
+                        <td>7:20 AM</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Balaji Nagar Main Road</td>
+                        <td>7:05 AM</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>B.J.P Office</td>
+                        <td>7:35 AM</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Rainbow Vistas</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Hi-Tech City</td>
+                        <td>7:50 AM</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Biodiversity</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Raidurgam</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Chitrapuri Colony</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Nanakram Guda</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>K.L.H Campus</td>
+                        <td>7:45 AM</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
